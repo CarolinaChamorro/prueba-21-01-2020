@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Juguete Bombero Motobomba</title>
+</head>
+<body>
+<h1>Juguete Bomberos vs Motobombas</h1>
+<div class="container">
+<div class="A">
+    <div class="dato1">
+        <label class="nombre"> NOMBRE</label>
+        <input type="text" id="nombre">
+    </div>
+    <div class="dato2">
+        <label class="nacimiento">Año de nacimiento</label>
+        <input type="text" id="nacimiento">
+    </div>
+    <button id="agregarBombero" onclick="agregarBombero()">Agregar</button>
+    <div class="casillaBombero" id="casillaBombero">
+    </div>
+</div>
+<div class="B">
+    <div class="dato1">
+        <label class="nombMoto"> Motobomba</label>
+        <input type="text" id="nombMoto">
+    </div>
+   
+    <button id="agregarMotobomba" onclick="agregarMotobomba()">Agregar</button>
+    <div class="casillaBombero" id="casillaMotobomba">
+    </div>
+</div>
+</div>
+<br><br>
+<button class="botonAsociar" onclick="asociar()">Asociar</button>
+</body>
+<script src="main.js"></script>
+</html>

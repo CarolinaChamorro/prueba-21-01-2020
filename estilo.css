@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+    font-size: 50px;
+    color: brown;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+.dato2{
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.dato1{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.celdas {
+    border: 2px solid rgb(255, 60, 0);
+    padding: 8px;
+    margin: 2px;
+ }
+ .botonAsociar{
+     padding: 3px 5px 3px 5px;
+     font: bolder;
+     font-size: 20px;
+     color: midnightblue;
+ }
+
