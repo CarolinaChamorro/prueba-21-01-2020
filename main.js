@@ -28,75 +28,72 @@ function agregarBombero() {
     let fechNaci = document.getElementById("nacimiento").value;
     let nuevoBombero = new Bombero(nombre, fechNaci);
     listaBomberos.push(nuevoBombero);
+  
     //lista de bomberos
     for (let j = 0; j < listaBomberos.length; j++) {
         var casillero = document.createElement('div');
+        //radio button
+         var radioBombero= document.createElement('input');
+        radioBombero.setAttribute('type', 'radio');
         casillero.className = 'celdas';
-        casillero.setAttribute("value", j);
-        casillero.id = j;
-        console.log("numero de casillero bombero " + casillero.id);
+        radioBombero.setAttribute("value", j);
+        radioBombero.id = j;
+        var radioB=radioBombero.id;
+       console.log("el numero de radioBombero  "+radioB);
+       radioBombero.appendChild(document.createTextNode(radioB));
         casillero.appendChild(document.createTextNode(listaBomberos[j].nombre));
-
         document.getElementById("nombre").value = " ";
         document.getElementById("nacimiento").value = " ";
     }
+    contenedorBombero.appendChild(radioBombero);
     contenedorBombero.appendChild(casillero);
 }
 console.log("mirar toda la lista en listaBomberos");
-// motobombas
+
 function agregarMotobomba() {
     //obtener datos motobomba
     let codigo = document.getElementById("nombMoto").value;
     let nuevaMoto = new Motobomba(codigo);
     listaMoto.push(nuevaMoto);
+    
     //lista motobomba
     for (let i = 0; i < listaMoto.length; i++) {
         var casillero = document.createElement('div');
+        //radiobutton
+        var radioMoto= document.createElement('input');
+        radioMoto.setAttribute('type', 'radio');
+        radioMoto.setAttribute("value", i);
+        radioMoto.id = i;
+       var radioM=radioMoto.id;
+       console.log("el numero de radioMoto  "+radioM);
         casillero.className = 'celdas';
-        casillero.id = i;
-        console.log("numero de casillero bombero " + casillero.id);
-        casillero.setAttribute("value", i);
+        radioMoto.appendChild(document.createTextNode(radioM));
         casillero.appendChild(document.createTextNode(listaMoto[i].codigo));
         document.getElementById("nombMoto").value = " ";
     }
+    contenedorMoto.appendChild(radioMoto);
     contenedorMoto.appendChild(casillero);
 }
 console.log("mirar toda la lista en listaMoto");
 
-let seleccionados=[];
 //asociar
 function asociar() {
-
-
-    var serie = generarNumero(0, 90);//listaMo listaBom
-    if ((seleccionados.includes(serie) || seleccionados === [])) {
-        console.log("ya existe el numero : " + serie);
-        asociar();
-    } else if (numUsados.length <91) {//91 listas.length
-        verNum=serie;
-        numUsados.push(serie);
-        //numeros que se van a guardar
-        console.log("numero guardado",numUsados[numUsados.length - 1]);
-    } else {
-        var marco=document.getElementById("mostrar");
-        marco.style.backgroundColor = "pink";
-        alert("Todos los numeros ya han sido jugados");
+    let seleccionados=[];
+  for (let b = 0; b < radioMoto.length; b++) {
+    if (radioMoto[b].checked==true) {
+     console.log("el numero de radioMOTO"+radioMoto[b]);
+      
     }
-    document.getElementById("verNumero").innerHTML=verNum;
-
-   /*  for (let z = 0; z < listaMoto.length; z++) {
-      if (listaMoto[z]) {
-        seleccionados.push(z);
+    /* for (let a = 0; a < listaB.options.length; a++) {
+    if (listaB.options[a].selected==true) {
+      for (let c = 0; c < indices.length; c++) {
+        lMotobombas[indices[c]].addBombero(lBomberos[a]);   
       }
-    }
-    for (let x = 0; x < listaBomberos.length; x++) {
-      if (contenidoBom[x].selected==true) {
-          contenidoBom[x].style.color="green";
-        for (let y = 0; y < seleccionados.length; y++) {
-          listaMoto[seleccionados[y]].addBombero(listaBomberos[x]);   
-        }
-      } else {
-        console.log("a la vivora de la mar");
-      }    
-    } */
-}
+    } else {
+      console.log("a la vivora de la mar");
+    }    
+  } */
+  }
+  
+
+  }
